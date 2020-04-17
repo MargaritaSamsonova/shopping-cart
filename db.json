@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "T-shirt Black",
+      "image": "black.jpg",
+      "desc": "Black t-shirt"
+    },
+    {
+      "id": 2,
+      "name": "T-shirt White",
+      "image": "white.jpg",
+      "desc": "White t-shirt"
+    },
+    {
+      "id": 3,
+      "name": "T-shirt Yellow",
+      "image": "yellow.jpg",
+      "desc": "Yellow t-shirt"
+    },
+    {
+      "id": 4,
+      "name": "T-shirt Blue",
+      "image": "blue.jpg",
+      "desc": "Blue t-shirt"
+    },
+    {
+      "id": 5,
+      "name": "T-shirt Purple",
+      "image": "purple.jpg",
+      "desc": "Purple t-shirt"
+    },
+    {
+      "id": 6,
+      "name": "T-shirt Red",
+      "image": "red.jpg",
+      "desc": "Red t-shirt"
+    },
+    {
+      "id": 7,
+      "name": "T-shirt Green",
+      "image": "green.jpg",
+      "desc": "Green t-shirt"
+    },
+    {
+      "id": 8,
+      "name": "T-shirt Pink",
+      "image": "pink.jpg",
+      "desc": "Pink t-shirt"
+    }
+  ],
+  "orders": [],
+  "cart": []
+}
