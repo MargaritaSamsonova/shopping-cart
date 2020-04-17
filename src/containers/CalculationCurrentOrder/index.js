@@ -11,10 +11,15 @@ import {
     getIsLoading,
 } from "../../modules/cart";
 
+const getTotal = (cart) => cart.reduce((accumulator, currentValue) => (
+    +accumulator + (+currentValue.price * currentValue.quantity)
+), 0);
+
 const mapStateToProps = state => ({
     cart: getCart(state),
     isLoading: getIsLoading(state),
     error: getError(state),
+    total: getTotal(getCart(state))
 })
 
 const mapDispatchToProps = {

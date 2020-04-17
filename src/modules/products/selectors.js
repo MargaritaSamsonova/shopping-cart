@@ -5,9 +5,10 @@ export const getError = state => state.products.error;
 export const getProductsImages = createSelector(
     state => state.products.elements,
     elements =>
-        elements.map(({ id, image , name }) => ({
+        elements.map(({ id, image , name, price }) => ({
             id,
             image,
-            name
+            name,
+            price
         })),
 );

@@ -7,7 +7,8 @@ export const Product = ({product, addToCart}) => (
         </div>
         <div className="product__info">
             <div className="product__name">{product.name}</div>
-            <button className="btn" onClick={addToCart.bind(null, product)}>В корзину</button>
+            <div className="product__price">Цена: {product.price}₽</div>
+            <button className="btn btn--bottom btn--long" onClick={addToCart.bind(null, product)}>В корзину</button>
         </div>
     </li>
 )

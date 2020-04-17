@@ -7,6 +7,7 @@ export const CartProduct = ({product, incrementQuantity, decrementQuantity, dele
         </div>
         <div>
             <div>{product.name}</div>
+            <div>Цена: {product.price}₽</div>
 
             <button className="btn-white btn-white--red" onClick={decrementQuantity.bind(null, product.id)}>-</button>
             <span>{product.quantity}</span>
