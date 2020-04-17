@@ -97,8 +97,6 @@ export function* decrementQuantityProduct() {
          try {
              const product = yield call(getProductInCart, action.payload);
 
-             debugger
-
              if (+product.quantity === 1) {
                  yield put(deleteProductsFromCartRequest(product.id));
              } else {
@@ -116,12 +114,8 @@ export function* decrementQuantityProduct() {
 
 export function* incrementQuantityProduct() {
     yield takeEvery(incrementQuantityProductInCartRequest, function*(action) {
-        /*TODO: дописать условие наличия quantity*/
-
         try {
              const product = yield call(getProductInCart, action.payload);
-
-             debugger
 
              const result = yield call(patchProductInCart, {
                  ...product,
