@@ -62,7 +62,6 @@ code {
 
   color: #fff;
   background-color: #081c24;
-
 }
 
 .btn:hover {
@@ -71,6 +70,14 @@ code {
 
 .btn--red:hover {
   background-color: #e81626;
+}
+
+.btn--bottom {
+  margin-top: auto;
+}
+
+.btn--long {
+  width: 100%;
 }
 
 .navbar {
@@ -199,7 +206,16 @@ code {
 }
 
 .product__name {
-  margin-bottom: auto;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  text-align: left;
+  font-weight: 600;
+}
+
+.product__price {
+  margin-bottom: 30px;
+  align-self: flex-start;
+  text-align: left;
 }
 
 @media (max-width: 1200px) {
