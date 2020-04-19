@@ -13,8 +13,14 @@ import {
     incrementQuantityProductInCartRequest
 } from './actions';
 
-const getProductInCart = (id) =>
+const getProductById = (id) =>
     fetch(`http://localhost:3000/cart/${id}`).then(response =>
+        response.json(),
+    );
+
+const getProductByParams = (params) =>fetch(`http://localhost:3000/cart?${
+        Object.keys(params).map((paramKey)=>`${paramKey}=${params[paramKey]}`).join("&")}`
+    ).then(response =>
         response.json(),
     );
 
@@ -73,10 +79,14 @@ export function* fetchAllProducts() {
 export function* addProduct() {
     yield takeEvery(addProductsToCartRequest, function*(action) {
          try {
-             const addedProduct = yield call(getProductInCart, action.payload.id);
-             const isAddedProduct = Object.keys(addedProduct).length != 0;
+             const addedProductArr = yield call(getProductByParams, {
+                 productId: action.payload.productId,
+                 size: action.payload.size
+             });
+             const isAddedProduct = addedProductArr.length;
 
              if (isAddedProduct) {
+                 const addedProduct = addedProductArr[0];
                  const result = yield call(patchProductInCart, {
                      ...addedProduct,
                      "quantity": +addedProduct.quantity + 1
@@ -95,7 +105,7 @@ export function* addProduct() {
 export function* decrementQuantityProduct() {
     yield takeEvery(decrementQuantityProductInCartRequest, function*(action) {
          try {
-             const product = yield call(getProductInCart, action.payload);
+             const product = yield call(getProductById, action.payload);
 
              if (+product.quantity === 1) {
                  yield put(deleteProductsFromCartRequest(product.id));
@@ -115,7 +125,7 @@ export function* decrementQuantityProduct() {
 export function* incrementQuantityProduct() {
     yield takeEvery(incrementQuantityProductInCartRequest, function*(action) {
         try {
-             const product = yield call(getProductInCart, action.payload);
+             const product = yield call(getProductById, action.payload);
 
              const result = yield call(patchProductInCart, {
                  ...product,

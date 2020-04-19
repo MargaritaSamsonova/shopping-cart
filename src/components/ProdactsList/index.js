@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {Product} from "../Product";
 
-export const ProductsList = ({products, isLoading, error, fetchProductsRequest, addProductsToCartRequest}) => {
+export const ProductsList = ({products, filterSizes, isLoading, error, fetchProductsRequest, addProductsToCartRequest}) => {
     useEffect(() => {
         fetchProductsRequest();
     }, []);
@@ -12,7 +12,10 @@ export const ProductsList = ({products, isLoading, error, fetchProductsRequest, 
     return (
     <ul className="products-list">
         {products.map((product) => (
-            <Product key={product.id} product={product} addToCart={addProductsToCartRequest}/>
+            <Product key={product.id}
+                     product={product}
+                     addToCart={addProductsToCartRequest}
+                     filterSizes={filterSizes}/>
         ))}
     </ul>
 )}

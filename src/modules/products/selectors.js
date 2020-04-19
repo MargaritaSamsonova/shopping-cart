@@ -2,13 +2,17 @@ import { createSelector } from 'reselect';
 
 export const getIsLoading = state => state.products.isLoading;
 export const getError = state => state.products.error;
-export const getProductsImages = createSelector(
+export const getProductsList = createSelector(
     state => state.products.elements,
     elements =>
-        elements.map(({ id, image , name, price }) => ({
+        elements.map(({ id, image , name, desc, price, availableSizes }) => ({
             id,
             image,
             name,
-            price
+            desc,
+            price,
+            availableSizes
         })),
 );
+
+export const getFilterSizes = state => state.products.filterSizes;

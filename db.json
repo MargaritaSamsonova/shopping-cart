@@ -5,56 +5,94 @@
       "name": "T-shirt Black",
       "image": "black.jpg",
       "price": "5",
-      "desc": "Black t-shirt"
+      "desc": "Black t-shirt",
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ]
     },
     {
       "id": 2,
       "name": "T-shirt White",
       "image": "white.jpg",
       "price": "10",
-      "desc": "White t-shirt"
+      "desc": "White t-shirt",
+      "availableSizes": [
+        "XS",
+        "S",
+        "L"
+      ]
     },
     {
       "id": 3,
       "name": "T-shirt Yellow",
       "image": "yellow.jpg",
       "price": "8",
-      "desc": "Yellow t-shirt"
+      "desc": "Yellow t-shirt",
+      "availableSizes": [
+        "S",
+        "M",
+        "L"
+      ]
     },
     {
       "id": 4,
       "name": "T-shirt Blue",
       "image": "blue.jpg",
       "price": "6",
-      "desc": "Blue t-shirt"
+      "desc": "Blue t-shirt",
+      "availableSizes": [
+        "S",
+        "L"
+      ]
     },
     {
       "id": 5,
       "name": "T-shirt Purple",
       "image": "purple.jpg",
       "price": "15",
-      "desc": "Purple t-shirt"
+      "desc": "Purple t-shirt",
+      "availableSizes": [
+        "S",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": 6,
       "name": "T-shirt Red",
       "image": "red.jpg",
       "price": "9",
-      "desc": "Red t-shirt"
+      "desc": "Red t-shirt",
+      "availableSizes": [
+        "XS",
+        "M",
+        "L",
+        "XL"
+      ]
     },
     {
       "id": 7,
       "name": "T-shirt Green",
       "image": "green.jpg",
       "price": "10",
-      "desc": "Green t-shirt"
+      "desc": "Green t-shirt",
+      "availableSizes": [
+        "S",
+        "M"
+      ]
     },
     {
       "id": 8,
       "name": "T-shirt Pink",
       "image": "pink.jpg",
       "price": "12",
-      "desc": "Pink t-shirt"
+      "desc": "Pink t-shirt",
+      "availableSizes": [
+        "XS",
+        "S"
+      ]
     }
   ],
   "orders": [],
