@@ -1,13 +1,18 @@
 import {handleActions} from "redux-actions";
-import {fetchProductsFailure, fetchProductsRequest, fetchProductsSuccess} from "./actions";
+import {fetchProductsFailure, fetchProductsRequest, fetchProductsSuccess,
+    addSizeFilter, clearFilterSizes, deleteSizeFilter} from "./actions";
 import {combineReducers} from "redux";
-
-const initialState = [];
 
 const elements = handleActions({
     [fetchProductsRequest]: () => [],
     [fetchProductsSuccess]: (state, action) => action.payload,
-}, initialState);
+}, []);
+
+const filterSizes = handleActions({
+    [addSizeFilter]: (state, action) => [...state, action.payload],
+    [deleteSizeFilter]: (state, action) => state.filter(item => item !== action.payload),
+    [clearFilterSizes]: () => [],
+}, []);
 
 const isLoading = handleActions({
     [fetchProductsRequest]: () => true,
@@ -22,6 +27,7 @@ const error = handleActions({
 
 export default combineReducers({
     elements,
+    filterSizes,
     isLoading,
     error
 });
