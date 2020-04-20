@@ -8,4 +8,10 @@ export const addSizeFilter = createAction("ADD_SIZE_FILTER");
 export const deleteSizeFilter = createAction("DELETE_SIZE_FILTER");
 export const clearFilterSizes = createAction("CLEAR_SIZE_FILTER");
 
+export const updateOrder = createAction("UPDATE_ORDER");
+
 export const SIZES = ["XS", "S", "M", "L", "XL"];
+export const ORDER_BY = {
+    PRICE_ASD: "PRICE_ASD",
+    PRICE_DESC: "PRICE_DESC",
+}

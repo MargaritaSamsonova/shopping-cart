@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {Product} from "../Product";
 
-export const ProductsList = ({products, filterSizes, isLoading, error, fetchProductsRequest, addProductsToCartRequest}) => {
+export const ProductsList = ({products, filterSizes, orderBy, isLoading, error, fetchProductsRequest, addProductsToCartRequest}) => {
     useEffect(() => {
         fetchProductsRequest();
     }, []);

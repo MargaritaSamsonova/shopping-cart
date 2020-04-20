@@ -16,3 +16,4 @@ export const getProductsList = createSelector(
 );
 
 export const getFilterSizes = state => state.products.filterSizes;
+export const getOrderBy = state => state.products.orderBy;
