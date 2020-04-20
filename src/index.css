@@ -19,6 +19,12 @@ code {
   margin-bottom: 30px;
 }
 
+.select {
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
 .btn-white {
   display: inline-flex;
   font-weight: 600;

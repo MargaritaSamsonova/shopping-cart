@@ -18,6 +18,7 @@ export const Product = ({product, addToCart, filterSizes}) => {
             <img className="product__img" src={require(`./../../static/products/${product.image}`)}/>
         </div>
         <div className="product__info">
+            <div className="product__name">{product.id}</div>
             <div className="product__name">{product.name}</div>
             <div className="product__price">Цена: {product.price}₽</div>
 

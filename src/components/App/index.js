@@ -3,6 +3,7 @@ import './App.css';
 import VisibleProductsList from "../../containers/VisibleProductsList";
 import CalculationCurrentOrder from "../../containers/CalculationCurrentOrder";
 import FilterSizes from "../../containers/FilterSizes";
+import Sorting from "../../containers/Sorting";
 
 export function App() {
     return (
@@ -19,8 +20,10 @@ export function App() {
                             <div className="main-header__col">
                                 <FilterSizes/>
                             </div>
+                            <div className="main-header__col">
+                                <Sorting/>
+                            </div>
                         </div>
-
                         <VisibleProductsList/>
                     </main>
                     <aside className="sidebar card col">
@@ -28,7 +31,6 @@ export function App() {
                     </aside>
                 </div>
             </div>
-
         </div>
     );
 }
