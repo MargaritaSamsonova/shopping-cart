@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import styles from "./Product.module.css";
 
 export const Product = ({product, addToCart, filterSizes}) => {
     const [checkedSize, setCheckedSize] = useState(product.availableSizes[0]);
@@ -13,34 +14,36 @@ export const Product = ({product, addToCart, filterSizes}) => {
     })
 
     return (
-    <li className="product card">
-        <div className="product__img-wrap">
-            <img className="product__img" src={require(`./../../static/products/${product.image}`)}/>
-        </div>
-        <div className="product__info">
-            <div className="product__name">{product.id}</div>
-            <div className="product__name">{product.name}</div>
-            <div className="product__price">Цена: {product.price}₽</div>
+    <li className={styles.product}>
+        <div className={styles.productContent}>
+            <div className={styles.productImgWrap}>
+                <img className={styles.productImg} src={require(`./../../static/products/${product.image}`)}/>
+            </div>
+            <div className={styles.productInfo}>
+                <div className={styles.productName}>{product.name}</div>
+                <div className={styles.productDesc}>{product.desc}</div>
 
-            <ul className="product__size-radio-list">
-            {product.availableSizes.map((size)=>(
-                <li key={size} className="product__size-radio-item">
-                    <label className="product__size-radio-label">
-                        <input type="radio"
-                               name={product.id}
-                               value={size}
-                               checked={size === checkedSize}
-                               onChange={(e) => setCheckedSize(e.target.value)}
-                               style={{display: "none"}}
-                               className="product__size-radio"
-                        />
-                        <div className="product__size-radio-text">{size}</div>
-                    </label>
-                </li>
-            ))}
-            </ul>
+                <ul className={styles.productSizeRadioList}>
+                {product.availableSizes.map((size)=>(
+                    <li key={size} className={styles.productSizeRadioItem}>
+                        <label className={styles.productSizeRadioLabel}>
+                            <input type="radio"
+                                   name={product.id}
+                                   value={size}
+                                   checked={size === checkedSize}
+                                   onChange={(e) => setCheckedSize(e.target.value)}
+                                   style={{display: "none"}}
+                                   className={styles.productSizeRadio}
+                            />
+                            <div className={styles.productSizeRadioText}>{size}</div>
+                        </label>
+                    </li>
+                ))}
+                </ul>
 
-            <button className="btn btn--bottom btn--long" onClick={addToCart.bind(null, getAddingProduct())}>В корзину</button>
+                <div className={styles.productPrice}>Цена: {product.price}₽</div>
+            </div>
         </div>
+        <button className="btn btn--bottom btn--long" onClick={addToCart.bind(null, getAddingProduct())}>В корзину</button>
     </li>
 )}

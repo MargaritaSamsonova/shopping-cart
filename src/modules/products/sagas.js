@@ -1,3 +1,4 @@
+import config from "../../config";
 import { takeEvery, call, put } from 'redux-saga/effects';
 import {
     fetchProductsRequest,
@@ -6,7 +7,7 @@ import {
 } from './actions';
 
 const getProducts = () =>
-    fetch(`http://localhost:3000/products`).then(response =>
+    fetch(`${config.backendUrl}/products`).then(response =>
         response.json(),
     );
 

@@ -1,0 +1,18 @@
+.select {
+    padding: 8px 10px;
+    font-size: 12px;
+    color: var(--font-color);
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary);
+    border-color: var(--color-accent-dark);
+    color: var(--color-accent-dark);
+    cursor: pointer;
+}
+
+.select-dark {
+    background: #1b2136;
+    border-color: #2196f3;
+    color: #2196f3;
+    font-size: 12px;
+    box-shadow: 0 0 14px #2196f3;
+}

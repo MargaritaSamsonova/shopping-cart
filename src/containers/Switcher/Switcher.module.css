@@ -1,0 +1,77 @@
+.switcher {
+    --switcher-width: 39px;
+    --switcher-height: 22px;
+    --switcher-toggle-width: var(--switcher-height);
+    --border-radius: calc(var(--switcher-width) / 2);
+    --transition-sec: 0.3s;
+
+    display: inline-block;
+    cursor: pointer;
+}
+
+.switcherInput {
+    display: none;
+}
+
+.switcherBody {
+    position: relative;
+    width: var(--switcher-width);
+    height: var(--switcher-height);
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.switcherToggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--switcher-toggle-width);
+    height: var(--switcher-toggle-width);
+    border-radius: 50%;
+    background-color: transparent;
+    transition: var(--transition-sec);
+}
+
+.switcherToggle:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+}
+
+.switcherToggle:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    width: 59%;
+    height: 59%;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: var(--transition-sec) right;
+}
+
+.switcherInput:checked ~ .switcherBody {
+    background-color: var(--color-accent);
+}
+
+.switcherInput:checked ~ .switcherBody .switcherToggle {
+    left: calc(100% - var(--switcher-toggle-width));
+}
+
+.switcherInput:checked ~ .switcherBody .switcherToggle:after {
+    background-color: var(--color-light);
+}
+
+.switcherInput:checked ~ .switcherBody .switcherToggle:before {
+    right: 41%;
+    background-color: var(--color-accent);
+    z-index: 1;
+}
