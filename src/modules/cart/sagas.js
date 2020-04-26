@@ -1,3 +1,4 @@
+import config from "../../config";
 import { takeEvery, call, put, fork, select } from 'redux-saga/effects';
 import {
     addProductsToCartRequest,
@@ -14,23 +15,23 @@ import {
 } from './actions';
 
 const getProductById = (id) =>
-    fetch(`http://localhost:3000/cart/${id}`).then(response =>
+    fetch(`${config.backendUrl}/cart/${id}`).then(response =>
         response.json(),
     );
 
-const getProductByParams = (params) =>fetch(`http://localhost:3000/cart?${
+const getProductByParams = (params) =>fetch(`${config.backendUrl}/cart?${
         Object.keys(params).map((paramKey)=>`${paramKey}=${params[paramKey]}`).join("&")}`
     ).then(response =>
         response.json(),
     );
 
 const getProductsCart = () =>
-    fetch(`http://localhost:3000/cart`).then(response =>
+    fetch(`${config.backendUrl}/cart`).then(response =>
         response.json(),
     );
 
 const deleteProductFromCart = (id) =>
-    fetch(`http://localhost:3000/cart/${id}`, {
+    fetch(`${config.backendUrl}/cart/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -42,7 +43,7 @@ const deleteProductFromCart = (id) =>
 const addProductToCart = (product) => {
     const changedProduct = {...product, "quantity": "1"};
 
-    return fetch(`http://localhost:3000/cart/`, {
+    return fetch(`${config.backendUrl}/cart/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -55,7 +56,7 @@ const addProductToCart = (product) => {
 
 
 const patchProductInCart = (product) =>
-    fetch(`http://localhost:3000/cart/${product.id}`, {
+    fetch(`${config.backendUrl}/cart/${product.id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
