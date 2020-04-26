@@ -1,23 +1,37 @@
 import React from "react";
+import styles from "./CartProduct.module.css";
 
 export const CartProduct = ({product, incrementQuantity, decrementQuantity, deleteFromCart}) => (
-    <li className="product product--cart">
-        <div className="product__img-wrap product__img-wrap--small">
-            <img className="product__img" src={require(`./../../static/products/${product.image}`)}/>
-        </div>
-        <div>
-            <div>{product.name}</div>
-            <div>{product.desc}</div>
-            <div>{product.size}</div>
-            <div>Цена: {product.price}₽</div>
+    <li className={styles.productCart}>
+        <div className={styles.productRow}>
+            <div className={styles.productImgWrap}>
+                <img className={styles.productImg} src={require(`./../../static/products/${product.image}`)}/>
+            </div>
+            <div className={styles.productInfo}>
+                <div className={styles.productName}>{product.name}</div>
+                {product.desc.length ?
+                    <div className={styles.productDesc}>{product.desc}</div> : ""
+                }
 
-            <button className="btn-white btn-white--red" onClick={decrementQuantity.bind(null, product.id)}>-</button>
-            <span>{product.quantity}</span>
-            <button className="btn-white" onClick={incrementQuantity.bind(null, product.id)}>+</button>
+                <div className={styles.productSizeWrap}>
+                    <div className={styles.productCartField}>Размер</div>
+                    <div className={styles.productCartValue}>
+                        <div className={styles.productSize}>{product.size}</div>
+                    </div>
+                </div>
 
-            <div>
-                <button className="btn btn--red" onClick={deleteFromCart.bind(null, product.id)}>Удалить</button>
+                <div className={styles.productCounter}>
+                    <div className={styles.productCartField}>Количество</div>
+                    <div className={styles.productCartValue}>
+                        <button className="btn-white btn-white--red" onClick={decrementQuantity.bind(null, product.id)}>-</button>
+                        <span className={styles.productQuantity}>{product.quantity}</span>
+                        <button className="btn-white" onClick={incrementQuantity.bind(null, product.id)}>+</button>
+                    </div>
+                </div>
+                <div className={styles.productPrice}>{product.price * product.quantity} ₽</div>
             </div>
         </div>
+
+        <button className={styles.deleteProduct} onClick={deleteFromCart.bind(null, product.id)}>×</button>
     </li>
 )

@@ -4,14 +4,25 @@ import VisibleProductsList from "../../containers/VisibleProductsList";
 import CalculationCurrentOrder from "../../containers/CalculationCurrentOrder";
 import FilterSizes from "../../containers/FilterSizes";
 import Sorting from "../../containers/Sorting";
+import Switcher from "../../containers/Switcher";
+import {titleMain, iconHeart} from "./TitleMain.module.css";
 
 export function App() {
+    useEffect(() => {
+        document.body.classList.add("theme-light");
+    }, []);
+
     return (
-        <div className="App">
-            <header>
-                <nav className="navbar">
-                    <div className="container">Я ❤ футболки</div>
-                </nav>
+        <div>
+            <header className="header">
+                <div className="container">
+                    <h2 className={titleMain}>
+                        Я <span className={iconHeart}>♡</span> футболки
+                    </h2>
+                </div>
+                <div className="header-switcher">
+                    <Switcher/>
+                </div>
             </header>
             <div className="container">
                 <div className="content">

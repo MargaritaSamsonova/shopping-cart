@@ -37,7 +37,7 @@ const sortProducts = (sortingData, orderBy) => {
 }
 
 const getVisibilityList = (productList, orderBy, filterSizes) => {
-    if (filterSizes.length && !orderBy) return productList;
+    if (!filterSizes.length && !orderBy) return productList;
 
     const filteredProductList = filterSizes.length ?
         productList.filter((product)=>(

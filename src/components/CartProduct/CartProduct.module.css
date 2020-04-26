@@ -1,0 +1,133 @@
+.productCart {
+    position: relative;
+    padding: 10px 0 20px 0;
+    width: 100%;
+    min-height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--color-primary);
+    word-wrap: break-word;
+}
+
+.productCart:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background-color: var(--color-accent-dark);
+    opacity: 0.1;
+}
+
+.productCart:last-child:after {
+    display: none;
+}
+
+.productImgWrap {
+    margin-top: 10px;
+    width: 20%;
+    max-height: 80px;
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.productInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 15px 0 25px;
+    flex: 1;
+    text-align: left;
+}
+
+.productName {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.productDesc {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.productRow {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.productCol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productCartField {
+    margin-right: 7px;
+    display: inline-block;
+    font-size: 13px;
+    color: var(--font-color-light);
+}
+
+.productCartValue {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 14px;
+}
+
+.productPrice {
+    margin-bottom: 10px;
+    align-self: flex-end;
+    font-weight: 600;
+}
+
+.productSizeWrap {
+    margin-bottom: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productSize {
+    display: inline-block;
+}
+
+.productCounter {
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.productQuantity {
+    vertical-align: center;
+}
+
+.deleteProduct {
+    composes: btn-white from "../../index.css";
+    composes: btn-white--red from "../../index.css";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}

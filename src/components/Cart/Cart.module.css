@@ -1,0 +1,10 @@
+.cart {
+    width: 100%;
+    text-align: center;
+}
+
+.cartList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

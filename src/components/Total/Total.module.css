@@ -1,0 +1,27 @@
+.totalWrap {
+    position: relative;
+    padding: 20px 0 10px;
+}
+
+.totalWrap:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 1px;
+    background-color: var(--color-accent-dark);
+    opacity: 0.2;
+}
+
+.quantity {
+    margin-bottom: 10px;
+    text-align: right;
+    color: var(--font-color-light);
+    font-size: 13px;
+}
+
+.total {
+    font-weight: 600;
+    text-align: right;
+}

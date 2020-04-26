@@ -1,0 +1,18 @@
+.filterSizesItem {
+    margin-right: 5px;
+}
+
+.filterSizesBtn {
+    composes: btn from "../../index.css";
+
+    padding: 6px 2px;
+    min-width: 33px;
+    margin-right: 5px;
+}
+
+.filterSizesBtnActive {
+    composes: filterSizesBtn;
+
+    background: var(--button-bg-hover);
+    border: var(--button-border);
+}

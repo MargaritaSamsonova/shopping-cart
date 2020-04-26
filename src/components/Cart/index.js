@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {CartProduct} from "../CartProduct";
 import {Total} from "../Total";
+import styles from "./Cart.module.css";
 
 export const Cart = ({cart,
                          isLoading,
@@ -18,11 +19,11 @@ export const Cart = ({cart,
     if (error) return <p>Произошла сетевая ошибка</p>;
 
     return (
-        <div className="cart">
+        <div className={styles.cart}>
             <div className="title">Йа твоя корзинко!</div>
             {cart.length ? (
                 <>
-                    <ul className="cart__list">
+                    <ul className={styles.cartList}>
                         {cart.map((product) => (
                             <CartProduct key={product.id}
                                          product={product}
@@ -31,13 +32,11 @@ export const Cart = ({cart,
                                          deleteFromCart={deleteProductsFromCartRequest}/>
                         ))}
                     </ul>
-                    <Total total={total}/>
+                    <Total total={total} quantity={cart.reduce((acc, curr)=>(acc + +curr.quantity), 0)}/>
                 </>
             ) : (
-                <div>Наполни меня:)</div>
-            )
-            }
-
+                <div>Наполни меня :)</div>
+            )}
         </div>
     )
 }
