@@ -41,7 +41,6 @@
   --color-accent-dark: #2196f3;
 }
 
-
 body {
   margin: 0;
   font-family: BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -60,6 +59,16 @@ code {
   box-sizing: border-box;
 }
 
+.visuallyhidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
 .title {
   font-size: 20px;
   margin-bottom: 30px;
@@ -75,12 +84,19 @@ code {
   border-radius: var(--border-radius);
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   cursor: pointer;
-  padding: 5px;
+  padding: 1px 4px;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-white:hover,
 .btn-white:focus {
   color: var(--color-accent);
+}
+
+.btn-white:focus {
+  box-shadow: 0 0 0px 2px var(--color-accent);
   outline: none;
 }
 
@@ -109,6 +125,10 @@ code {
 .btn:hover {
   background: var(--button-bg-hover);
   border: var(--button-border);
+}
+
+.btn:focus {
+  box-shadow: 0 0 0px 2px var(--color-accent);
   outline: none;
 }
 

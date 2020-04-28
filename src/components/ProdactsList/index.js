@@ -11,12 +11,13 @@ export const  ProductsList = ({products, filterSizes, orderBy, isLoading, error,
     if (error) return <p>Произошла сетевая ошибка</p>;
 
     return (
-    <ul className={productsList}>
-        {products.map((product) => (
-            <Product key={product.id}
-                     product={product}
-                     addToCart={addProductsToCartRequest}
-                     filterSizes={filterSizes}/>
-        ))}
-    </ul>
-)}
+        <ul className={productsList}>
+            {products.map((product) => (
+                <Product key={product.id}
+                         product={product}
+                         addToCart={addProductsToCartRequest}
+                         filterSizes={filterSizes}/>
+            ))}
+        </ul>
+    )
+}

@@ -10,7 +10,11 @@
 }
 
 .switcherInput {
-    display: none;
+    composes: visuallyhidden from "../../index.css";
+}
+
+.switcherInput:focus ~ .switcherBody {
+    box-shadow: 0 0 0px 2px var(--color-accent);
 }
 
 .switcherBody {
