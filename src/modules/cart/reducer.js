@@ -11,8 +11,6 @@ import {
 } from "./actions";
 import {combineReducers} from "redux";
 
-const initialState = [];
-
 const elements = handleActions({
     [addProductsToCartSuccess]: (state, action) => [...state, action.payload],
 
@@ -25,7 +23,7 @@ const elements = handleActions({
     [fetchProductsCartSuccess]: (state, action) => action.payload,
 
     [productsCartFailure]: (state, action) => action.payload,
-}, initialState);
+}, []);
 
 const isLoading = handleActions({
     [fetchProductsCartRequest]: () => true,

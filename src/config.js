@@ -1,3 +1,3 @@
 export default {
-    backendUrl: "https://my-json-server.typicode.com/margaritasamsonova/shopping-cart"
+    backendUrl: "http://localhost:3001"
 }

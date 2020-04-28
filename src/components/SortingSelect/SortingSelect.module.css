@@ -1,12 +1,16 @@
 .select {
     padding: 8px 10px;
     font-size: 12px;
-    color: var(--font-color);
     border-radius: var(--border-radius);
     background-color: var(--color-primary);
     border-color: var(--color-accent-dark);
     color: var(--color-accent-dark);
     cursor: pointer;
+}
+
+.select:focus {
+    box-shadow: 0 0 0px 2px var(--color-accent);
+    outline: none;
 }
 
 .select-dark {

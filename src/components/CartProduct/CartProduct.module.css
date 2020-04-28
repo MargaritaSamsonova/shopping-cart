@@ -113,8 +113,21 @@
     align-items: center;
 }
 
+.productDecBtn {
+    composes: btn-white from "../../index.css";
+    composes: btn-white--red from "../../index.css";
+    width: 18px;
+    height: 18px;
+}
+
 .productQuantity {
-    vertical-align: center;
+    margin: 0 5px;
+}
+
+.productIncBtn {
+    composes: btn-white from "../../index.css";
+    width: 18px;
+    height: 18px;
 }
 
 .deleteProduct {
@@ -126,8 +139,11 @@
     right: 0;
     padding: 0;
     margin: 0;
+    width: 18px;
+    height: 18px;
     font-weight: 400;
     font-size: 22px;
-    line-height: 1;
     cursor: pointer;
+    line-height: 0.6;
+    padding-top: 2px;
 }

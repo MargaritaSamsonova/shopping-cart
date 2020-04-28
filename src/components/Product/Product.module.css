@@ -99,13 +99,17 @@
     color: var(--color-accent-dark);
 }
 
+.productSizeRadio {
+    composes: visuallyhidden from "../../index.css";
+}
+
 .productSizeRadio:checked ~ .productSizeRadioText {
     border: 1px solid var(--color-accent-dark);
     color: var(--color-accent-dark);
 }
 
 .productSizeRadio:focus ~ .productSizeRadioText {
-    border: 5px solid red;
+    box-shadow: 0 0 0px 2px var(--color-accent);
 }
 
 @media (max-width: 1125px) {
